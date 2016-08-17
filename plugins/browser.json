@@ -45,6 +45,24 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
         }
     },
     "dependent_plugins": {
