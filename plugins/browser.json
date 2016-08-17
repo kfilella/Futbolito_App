@@ -1,0 +1,58 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.phonegap.futbolitoapp"
+        }
+    }
+}
