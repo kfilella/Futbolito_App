@@ -52,10 +52,7 @@ var app = {
 app.initialize();
 
 document.addEventListener("deviceready", onDeviceReady, false);
-function addEvent()
-{
- window.location = "page2.html";
-}
+
 function onDeviceReady() {
    $("#btnJson").click(function(){
         $.ajax({
@@ -86,7 +83,7 @@ function onDeviceReady() {
                 for (var j = 0; j < resultados.length ; j++){
                     var trbody = $('<tr></tr>');
                     trbody.append('<th>'+(j+1)+'</th>');
-                    trbody.append('<th><a class="equipo'+i.toString()+j.toString()+'" href="#page3" data-transition="slide">'+resultados[j].equipo+'</a></th>');
+                    trbody.append('<th><a value="'+resultados[j].ID+'" class="equipo'+i.toString()+j.toString()+'" href="#page3" data-transition="slide">'+resultados[j].equipo+'</a></th>');
                     trbody.append('<th>'+resultados[j].PJ+'</th>');
                     trbody.append('<th>'+resultados[j].PTS+'</th>');
                     trbody.append('<td>'+resultados[j].PG+'</th>');
@@ -115,16 +112,32 @@ function onDeviceReady() {
                 for(var j = 0; j < resultados.length; j++){
                     $(".equipo"+i.toString()+j.toString()).bind('click', function(){
                         $('#equipoTest').empty();
-                        var nombre = $(this).html();
+                        $('.equipoNombre').html("");
+                        var idEquipo = $(this).attr("value");
+                        console.log(idEquipo);
                         $.ajax({
                             type: "GET",
-                            url: "http://futbolitoapp.herokuapp.com/get_equipos/",
+                            url: "http://futbolitoapp.herokuapp.com/get_equipo/"+idEquipo,
                             dataType: "json",
                             success: function(data) {
-                                for(var i = 0; i < data.length; i++){
-                                    if(nombre == data[i].nombre){
-                                        $('#equipoTest').append(data[i].nombre+" // "+data[i].director_tecnico+" // "+data[i].categoria);
-                                    }
+                                if(idEquipo == data.id){
+                                    $('#equipoTest').append(data.nombre+" // "+data.director_tecnico+" // "+data.categoria);
+                                    $('.equipoNombre').html(data.nombre);
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "http://futbolitoapp.herokuapp.com/get_jugadores_equipo/"+idEquipo,
+                                        dataType: "json",
+                                        success: function(data) {
+                                            $('#equipoJugadores').empty();
+                                            $('#equipoJugadores').append('</ul>');
+                                            for(var i = 0; i < data.length; i++){
+                                                $('#equipoJugadores').append('<li>'+data[i].nombre+" "+data[i].apellido+" // "+data[i].camiseta+'</li>');
+                                            }
+                                        },
+                                        error: function(e) {
+                                            alert('Error: ' + e.message);
+                                        }
+                                    });
                                 }
                             },
                             error: function(e) {

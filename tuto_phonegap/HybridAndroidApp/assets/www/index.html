@@ -56,27 +56,64 @@
     </div>
     <div data-role="page" id="page2">
         <div data-role="header" data-position="fixed">
-            <a href="#page1" class="ui-btn-left" data-rel="back" data-transition="slide">Back</a>
-            <a href="#page3" class="ui-btn-right" data-transition="slide">Next</a>
+            <a href="#page1" class="ui-btn-left" data-transition="slide">Back</a>
             <h1>Torneos 2016</h1>
         </div>
         <div data-role="content" id="torneos2016">
         </div>
     </div>
     <div data-role="page" id="page3">
-        <div data-role="header" data-position="fixed">
-            <a href="#page2" class="ui-btn-left" data-rel="back" data-transition="slide">Back</a>
-            <h1>Equipo</h1>
+        <div data-role="header">
+            <a href="#page2" class="ui-btn-left" data-transition="slide">Back</a>
+            <h1 class="equipoNombre">Equipo</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" class="ui-btn-active ui-state-persist">Detalles</a></li>
+                    <li><a href="#page4">Posiciones</a></li>
+                    <li><a href="#page5">Jugadores</a></li>
+                </ul>
+            </div>
         </div>
         <div data-role="content" id="equipoTest">
         </div>
+        <div data-role="footer" data-position="fixed">
+
+        </div>
     </div>
     <div data-role="page" id="page4">
-        <div data-role="header" data-position="fixed">
-            <a href="#page3" class="ui-btn-left" data-rel="back" data-transition="slide">Back</a>
-            <h1>Jugador</h1>
+        <div data-role="header">
+            <a href="#page2" class="ui-btn-left" data-transition="slide">Back</a>
+            <h1 class="equipoNombre">Equipo</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#page3">Detalles</a></li>
+                    <li><a href="#" class="ui-btn-active ui-state-persist">Posiciones</a></li>
+                    <li><a href="#page5">Jugadores</a></li>
+                </ul>
+            </div>
         </div>
-        <div data-role="content">
+        <div data-role="content" id="equipoPosiciones">
+        </div>
+        <div data-role="footer" data-position="fixed">
+
+        </div>
+    </div>
+    <div data-role="page" id="page5">
+        <div data-role="header">
+            <a href="#page2" class="ui-btn-left" data-transition="slide">Back</a>
+            <h1 class="equipoNombre">Equipo</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#page3">Detalles</a></li>
+                    <li><a href="#page4">Posiciones</a></li>
+                    <li><a href="#" class="ui-btn-active ui-state-persist">Jugadores</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content" id="equipoJugadores">
+        </div>
+        <div data-role="footer" data-position="fixed">
+
         </div>
     </div>
 
