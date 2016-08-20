@@ -9,10 +9,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MyListActivity"
-            android:label="MyListActivity">
-        </activity>
     </application>
     <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23" />
 </manifest>
