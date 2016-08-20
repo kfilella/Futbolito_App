@@ -111,7 +111,7 @@ function onDeviceReady() {
                 trhead.append(th10);
                 for(var j = 0; j < resultados.length; j++){
                     $(".equipo"+i.toString()+j.toString()).bind('click', function(){
-                        $('#equipoTest').empty();
+                        $('#equipoDetalle').empty();
                         $('.equipoNombre').html("");
                         var idEquipo = $(this).attr("value");
                         console.log(idEquipo);
@@ -121,7 +121,7 @@ function onDeviceReady() {
                             dataType: "json",
                             success: function(data) {
                                 if(idEquipo == data.id){
-                                    $('#equipoTest').append(data.nombre+" // "+data.director_tecnico+" // "+data.categoria);
+                                    $('#equipoDetalle').append(data.nombre+" // "+data.director_tecnico+" // "+data.categoria);
                                     $('.equipoNombre').html(data.nombre);
                                     $.ajax({
                                         type: "GET",
@@ -132,6 +132,20 @@ function onDeviceReady() {
                                             $('#equipoJugadores').append('</ul>');
                                             for(var i = 0; i < data.length; i++){
                                                 $('#equipoJugadores').append('<li>'+data[i].nombre+" "+data[i].apellido+" // "+data[i].camiseta+'</li>');
+                                            }
+                                        },
+                                        error: function(e) {
+                                            alert('Error: ' + e.message);
+                                        }
+                                    });
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "http://futbolitoapp.herokuapp.com/get_ult10partidosequipo/"+idEquipo,
+                                        dataType: "json",
+                                        success: function(data) {
+                                            $('#equipoDetalle').append('</ul>');
+                                            for(var i = 0; i < data.length; i++){
+                                                $('#equipoDetalle').append('<li>'+data[i].fecha+"//"+data[i].equipo_local+" "+data[i].gol_local+" - "+data[i].gol_visitante+" "+data[i].equipo_visitante+'</li>');
                                             }
                                         },
                                         error: function(e) {

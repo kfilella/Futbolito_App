@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App label shown within list of installed apps, battery & network usage screens. -->
-    <string name="app_name">Hello_Cordova</string>
+    <string name="app_name">FutbolitoApp</string>
     <!-- App label shown on the launcher. -->
     <string name="launcher_name">@string/app_name</string>
     <!-- App label shown on the task switcher. -->
