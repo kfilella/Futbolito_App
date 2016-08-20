@@ -152,6 +152,65 @@ function onDeviceReady() {
                                             alert('Error: ' + e.message);
                                         }
                                     });
+                                    $.ajax({
+                                       type: "GET",
+                                       url: "http://futbolitoapp.herokuapp.com/get_ultima_participacion/"+idEquipo,
+                                       dataType: "json",
+                                       success: function(data) {
+                                        $('#equipoPosiciones').empty();
+                                        var categoria = data.categoria;
+                                        var anio = data.anio;
+                                        var resultados = data.resultados;
+                                        var header= $('<h3>'+categoria+' '+anio+'</h3>');
+                                        var table = $('<table data-role="table" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Datos..." data-column-popup-theme="a"></table>');
+                                        var thead = $('<thead></thead>');
+                                        var trhead = $('<tr class="ui-bar-d"></tr>');
+                                        var th1 = $('<th data-priority="persist">#</th>');
+                                        var th2 = $('<th data-priority="persist">EQ</th>');
+                                        var th3 = $('<th data-priority="persist">PJ</th>');
+                                        var th4 = $('<th data-priority="persist">PTS</th>');
+                                        var th5 = $('<th data-priority="1">PG</th>');
+                                        var th6 = $('<th data-priority="1">PE</th>');
+                                        var th7 = $('<th data-priority="1">PP</th>');
+                                        var th8 = $('<th data-priority="2">GF</th>');
+                                        var th9 = $('<th data-priority="2">GC</th>');
+                                        var th10 = $('<th data-priority="2">GD</th>');
+                                        var tbody = $('<tbody></tbody>');
+                                        for (var j = 0; j < resultados.length ; j++){
+                                            var trbody = $('<tr></tr>');
+                                            trbody.append('<th>'+(j+1)+'</th>');
+                                            trbody.append('<th>'+resultados[j].equipo+'</th>');
+                                            trbody.append('<th>'+resultados[j].PJ+'</th>');
+                                            trbody.append('<th>'+resultados[j].PTS+'</th>');
+                                            trbody.append('<td>'+resultados[j].PG+'</th>');
+                                            trbody.append('<td>'+resultados[j].PE+'</th>');
+                                            trbody.append('<td>'+resultados[j].PP+'</th>');
+                                            trbody.append('<td>'+resultados[j].GF+'</th>');
+                                            trbody.append('<td>'+resultados[j].GC+'</th>');
+                                            trbody.append('<td>'+resultados[j].GD+'</th>');
+                                            tbody.append(trbody);
+                                        }
+                                        $('#equipoPosiciones').append(header);
+                                        $('#equipoPosiciones').append(table);
+                                        table.append(thead);
+                                        table.append(tbody);
+                                        thead.append(trhead);
+                                        trhead.append(th1);
+                                        trhead.append(th2);
+                                        trhead.append(th3);
+                                        trhead.append(th4);
+                                        trhead.append(th5);
+                                        trhead.append(th6);
+                                        trhead.append(th7);
+                                        trhead.append(th8);
+                                        trhead.append(th9);
+                                        trhead.append(th10);
+                                        $('#equipoPosiciones').enhanceWithin();
+                                       },
+                                       error: function(e) {
+                                         alert('Error: ' + e.message);
+                                       }
+                                    });
                                 }
                             },
                             error: function(e) {
